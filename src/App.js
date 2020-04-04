@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Button from './containers/updateStore'
+import UpdateStoreComp from './containers/updateStore'
 import Reaction from './components/reaction'
 
 function App() {
   return (
     <div className="App">
-      <Button />
+      <UpdateStoreComp />
     </div>
   );
 }

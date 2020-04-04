@@ -1,16 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateStore } from '../action/updateAction'
+import Reaction from '../components/reaction'
+import Button from '../components/action'
 
-let Button = ({ updated, saySomething }) => (
+let UpdateComp = ({ updated, saySomething }) => (
     <div>
-        <button onClick={saySomething}
-            type="button">
-            Add to favorites
-        >
-    </button>
-        <p>{updated}</p>
+        <Button saySomething={saySomething} />
+        <Reaction updated={updated} />
     </div>
+
 )
 
 const mapStateToProps = (state) => ({
@@ -19,9 +18,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     saySomething: () => { dispatch(updateStore()) }
 })
-Button = connect(
+UpdateComp = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Button)
+)(UpdateComp)
 
-export default Button;
+export default UpdateComp;

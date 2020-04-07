@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import updateAction from './reducers/action'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import signalRMiddleware from './action/signalrMiddleware';
 
-
-const store = createStore(updateAction)
+const store = createStore(updateAction, applyMiddleware(signalRMiddleware))
 
 ReactDOM.render(
   <Provider store={store}>
